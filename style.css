@@ -1,4 +1,11 @@
+img {
+	text-align: center;
+}
+a {
+    font-family: Calibri;
+}
 p {
+	text-emphasis: size;
 	text-align: center;
     font-family: Calibri;
 }
