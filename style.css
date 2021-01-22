@@ -1,20 +1,20 @@
-img {
-	text-align: center;
-}
 a {
     font-family: Calibri;
 }
 p {
+	color: white;
 	text-emphasis: size;
 	text-align: center;
     font-family: Calibri;
 }
 h1 { 
+			color: white;
 			text-align: center;
 			font-family: Arial;
 		}
 
 h2 {
+			color: white;
 		    font-family: Arial;
 		    font-style: Italic;
         }
