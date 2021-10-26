@@ -18,3 +18,8 @@ h2 {
 		    font-family: Arial;
 		    font-style: Italic;
         }
+@media only screen and (max-width:600px){
+    body{
+        transform: scale(200%);
+        }
+}
