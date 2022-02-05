@@ -1,3 +1,6 @@
+body{
+	min-height: 100vh;
+}
 a {
     font-family: Calibri;
 }
@@ -7,6 +10,34 @@ p {
 	text-align: center;
     font-family: Calibri;
 	font-size: 20px;
+}
+.btnSub{
+	font-size: 18px;
+	border: none;
+	color: #ff3300;
+	border-radius: .125em;
+	padding: 1em 2.5em;
+	text-align: center; 
+	cursor: pointer;
+	font-weight: bold;
+	background-color: #2B2D2F;
+}
+.btnOsu{
+	font-size: 18px;
+	border-radius: .125em;
+	padding: 1em 3.8em;
+	color: #ff4b9c;
+	border: none;
+	text-align: center; 
+	cursor: pointer;
+	font-weight: bold;
+	background-color: #2B2D2F;
+}
+.btnSub:hover{
+	background-color: #3a3a3a;
+}
+.btnOsu:hover{
+	background-color: #3a3a3a;
 }
 h1 { 
 			color: white;
@@ -18,8 +49,3 @@ h2 {
 		    font-family: Arial;
 		    font-style: Italic;
         }
-@media only screen and (max-width:600px){
-    body{
-        transform: scale(200%);
-        }
-}
