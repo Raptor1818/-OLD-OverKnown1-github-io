@@ -12,7 +12,7 @@ p {
 	font-size: 20px;
 }
 .btnSub{
-	font-size: 18px;
+	font-size: 22px;
 	border: none;
 	color: #ff3300;
 	border-radius: .125em;
@@ -23,7 +23,7 @@ p {
 	background-color: #2B2D2F;
 }
 .btnOsu{
-	font-size: 18px;
+	font-size: 22px;
 	border-radius: .125em;
 	padding: 1em 3.8em;
 	color: #ff4b9c;
@@ -38,6 +38,10 @@ p {
 }
 .btnOsu:hover{
 	background-color: #3a3a3a;
+}
+.RapHub{
+	font-size: 50px;
+	font: sans-serif;
 }
 h1 { 
 			color: white;
