@@ -7,6 +7,17 @@ body{
 a {
     font-family: Calibri;
 }
+body::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%); 
+	z-index: -1;
+	background: #1f1e1f;
+	width: 97.5%;
+	height: 100%;
+}
 p {
 	color: white;
 	text-emphasis: size;
