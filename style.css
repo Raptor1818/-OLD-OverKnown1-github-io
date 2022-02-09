@@ -1,8 +1,8 @@
 body{
 	min-height: 90vh;
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	/*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 15s ease infinite;*/
 }
 a {
     font-family: RobotoMono;
@@ -14,7 +14,8 @@ body::before {
 	left: 50%;
 	transform: translateX(-50%); 
 	z-index: -1;
-	background: #1f1e1f;
+	background: #000;
+	/*background: #1f1e1f;*/
 	width: 98.5%;
 	height: 100%;
 }
@@ -33,7 +34,7 @@ p {
 	text-align: center; 
 	cursor: pointer;
 	font-weight: bold;
-	background-color: #2B2D2F;
+	background-color: #1a1a1a;
 	font-family: RobotoMono;
 }
 .btnOsu{
@@ -45,14 +46,14 @@ p {
 	text-align: center; 
 	cursor: pointer;
 	font-weight: bold;
-	background-color: #2B2D2F;
+	background-color: #1a1a1a;
 	font-family: RobotoMono;
 }
 .btnSub:hover{
-	background-color: #3a3a3a;
+	background-color: #2a2a2a;
 }
 .btnOsu:hover{
-	background-color: #3a3a3a;
+	background-color: #2a2a2a;
 }
 .RapHub{
 	animation: RapHubFade 7s infinite;
@@ -79,7 +80,7 @@ h2 {
 	100% { color: #ee7752; }
 }
 
-@keyframes gradient {
+/*@keyframes gradient {
 	0% {
 		background-position: 0% 50%;
 	}
@@ -89,4 +90,11 @@ h2 {
 	100% {
 		background-position: 0% 50%;
 	}
+}*/
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index:-1;
 }
