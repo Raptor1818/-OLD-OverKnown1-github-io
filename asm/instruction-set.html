@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="assets/style.css">
     <style>
         @font-face{font-family: RobotoMono; src: url('fonts/RobotoMono-Regular.ttf');}
+        .blacc{
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -144,7 +147,7 @@ JMP address
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr style="color: black;">
                     <td>JC</td>
                     <td>Jump if carry</td>
                     <td>Carry = TRUE</td>
@@ -156,7 +159,7 @@ JMP address
                     <td>Carry = FALSE</td>
                     <td>JNB, JAE</td>
                 </tr>
-                <tr>
+                <tr style="color: black;">
                     <td>JZ</td>
                     <td>Jump if zero</td>
                     <td>Zero = TRUE</td>
@@ -168,7 +171,7 @@ JMP address
                     <td>Zero = FALSE</td>
                     <td>JNE</td>
                 </tr>
-                <tr>
+                <tr style="color: black;">
                     <td>JA</td>
                     <td>&gt;</td>
                     <td>Carry = FALSE && Zero = FALSE</td>
@@ -180,7 +183,7 @@ JMP address
                     <td>Carry = FALSE && Zero = FALSE</td>
                     <td>JA</td>
                 </tr>
-                <tr>
+                <tr style="color: black;">
                     <td>JAE</td>
                     <td>&gt;=</td>
                     <td>Carry = FALSE</td>
@@ -192,7 +195,7 @@ JMP address
                     <td>Carry = FALSE</td>
                     <td>JNC, JAE</td>
                 </tr>
-                <tr>
+                <tr style="color: black;">
                     <td>JB</td>
                     <td>&lt;</td>
                     <td>Carry = TRUE</td>
@@ -204,7 +207,7 @@ JMP address
                     <td>Carry = TRUE</td>
                     <td>JC, JB</td>
                 </tr>
-                <tr>
+                <tr style="color: black;">
                     <td>JBE</td>
                     <td>&lt;=</td>
                     <td>C = TRUE or Z = TRUE</td>
@@ -216,7 +219,7 @@ JMP address
                     <td>C = TRUE or Z = TRUE</td>
                     <td>JBE</td>
                 </tr>
-                <tr>
+                <tr style="color: black;">
                     <td>JE</td>
                     <td>=</td>
                     <td>Z = TRUE</td>
@@ -258,6 +261,74 @@ POP reg
         <p>Stops operation of the processor. Hit Reset button to reset IP before restarting.</p>
 <pre>
 HLT
+</pre>
+        <h2>Sample programs</h2>
+        <h4>String output</h4>
+<pre>
+JMP start:
+hello:  DB "Hello World!" ; Variable
+        DB 0	; String terminator
+
+        start:
+        MOV C, hello    ; Point to var 
+        MOV D, 232	; Point to output
+        CALL print
+        HLT
+   
+    print:			
+       MOV B, 0
+    .loop:
+       MOV A, [C]	; Get char from var
+       MOV [D], A	; Write to output
+       INC C
+       INC D  
+       CMP B, [C]	; Check if end
+       JNZ .loop	; jump if not
+
+       RET
+</pre>
+<h4>Output of a number with 2 digits</h4>
+<pre>
+MOV A, 21 ; Number to output
+MOV B, A ; Copy number in B
+MOV D, 232 ; Point to output
+
+DIV 10  ; From 21 to 2
+MUL 10  ; From 2 to 20
+SUB B, A ; 21 - 20 = 1
+DIV 10  ; From 20 to 2
+ADD A, 48  ; Add 48 for ASCII digit code
+ADD B, 48
+MOV [D], A  ; Output
+INC D
+MOV [D], B
+</pre>
+<h4>Same as above but 3 digits</h4>
+<pre>
+MOV A, 213 ; Number to output
+MOV B, A ; Copy in register B
+MOV D, 232 ; Point to output
+
+DIV 100 ; From 213 to 2
+CALL add: ; Call function
+SUB A, 48  ; Reset from ASCII code to decimal
+MUL 100 ; from 2 to 200
+SUB B, A  ; Remove first digit from 213 (13)
+MOV A, B ; Overwrite A with 13
+DIV 10 ; From 13 to 1
+CALL add:
+SUB A, 48  
+MUL 10  ; From 1 to 10
+SUB B, A ; 13 - 10 = 3
+ADD B, 48 
+MOV [D], B ; Output last digit
+HLT
+ 
+add:
+ADD A, 48 ; From decimal to ASCII
+MOV [D], A ; Output
+INC D  ; Next output cell
+RET
 </pre>
     </div>
 </body>
