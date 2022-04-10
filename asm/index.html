@@ -16,15 +16,15 @@
         <div class="container">
             <div class="navbar-header">
                 <div class="btn-group">
-                    <button type="button" style="margin-left: 10px" class="btn btn-success navbar-btn betterBtn" ng-click="run()" ng-hide="isRunning"></span> Run</button>
+                    <button type="button" class="btn btn-success navbar-btn betterBtn" ng-click="run()" ng-hide="isRunning"></span> Run</button>
                     <button type="button" class="btn btn-default navbar-btn betterBtn" ng-click="stop()" ng-show="isRunning"></span> Stop</button>
-                    <button type="button" class="btn btn-default navbar-btn betterBtn" ng-click="executeStep()" ng-disabled="isRunning" style="color: white"> Step</button>
+                    <button type="button" class="btn btn-default navbar-btn betterBtn" ng-click="executeStep()" ng-disabled="isRunning" style="color: white"><span class="glyphicon glyphicon-forward"></span> Step</button>
                 </div>
                 <button type="button" style="color: white" class="btn btn-default navbar-btn betterBtn" ng-click="reset()">Reset</button>
             </div>
             <div class="navbar-header navbar-right" style="padding: 10px;">
                 <image width="auto" height="40px" src="./media/gigachad-chad.gif" style="margin-right: 10px"></image>
-                <a class="rainbow" style="margin-right: 105px">Assembly Simulator</a>
+                <a class="rainbow">Assembly Simulator</a>
             </div>
         </div>
     </nav>
@@ -34,7 +34,7 @@
             <div class="col-lg-7 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Code | <a href="./instruction-set.html" target="_blank" style="color: #337AB7">Instruction Set</a></h4>
+                        <h4 class="panel-title">Code  |  <a href="./instruction-set.html" target="_blank" style="color: #337AB7">Instruction Set</a></h4>
                     </div>
                     <div class="panel-body">
                         <form role="form">
@@ -57,7 +57,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">Output</h4>
                     </div>
-                    <div class="panel-body source-code">
+                    <div class="panel-body source-code" style="margin: auto;">
                         <div style="float:left;" class="output"
                              ng-repeat="m in memory.data | startFrom: outputStartIndex track by $index">
                             <span>{{ getChar(m) }}</span>
