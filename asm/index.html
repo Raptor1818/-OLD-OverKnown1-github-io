@@ -57,7 +57,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">Output</h4>
                     </div>
-                    <div class="panel-body source-code" style="margin: auto;">
+                    <div class="panel-body source-code" style="margin: auto; display: flex; justify-content: center; align-items: center;">
                         <div style="float:left;" class="output"
                              ng-repeat="m in memory.data | startFrom: outputStartIndex track by $index">
                             <span>{{ getChar(m) }}</span>
