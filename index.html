@@ -9,41 +9,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="/images/F22.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    
+    <script type="text/javascript" src="./coreTyper/core.js"></script>
+
     <link rel="stylesheet" href="./style.css">
-    <title>ur mom lmao</title>
+    <title>Lorem</title>
 </head>
 
 <body>
     <canvas id=c></canvas>
     <script  src="hexagons/script.js"></script>
 
-    <h1>Welcome to</h1>
+    <div class="homeTitle" style="margin-bottom: 20px;">
+        <h1>Welcome to</h1>
+        
+        <h1 class="RapHub">Raptor's Hub</h1><br>
 
-    <h1 class="RapHub">Raptor's Hub</h1><br>
-    <p>Raptor's lil lounge, also website for coding self training.</p><br>
 
-    <div style="text-align: center;">
+        <div style="text-align: center;" id="app"></div>
+        <script type="text/javascript" src="./script/typer.js"></script> 
+    </div>
 
-        <button id="SubButton" target="_blank "class="btnSub">Subreddit</button>
+    <div style="margin-top: 3em; display: flex; justify-content: center;">
 
+        <button id="SubButton" target="_blank "class="btnSub" style="margin-right: 15px;">Subreddit</button>
         <script type="text/javascript">
             document.getElementById("SubButton").onclick = function () {
                 location.href = "https://www.reddit.com/r/raptorsecks/";
             };
         </script>
 
-        <button id="osuButton" target="_blank" class="btnOsu">osu!</button>
-
+        <button id="osuButton" target="_blank" class="btnOsu" style="margin-right: 15px;">osu!</button>
         <script type="text/javascript">
             document.getElementById("osuButton").onclick = function () {
                 location.href = "https://osu.ppy.sh/users/15854778";
             };
         </script>
 
-        <button id="asmButton" target="_blank" class="btnAsm" style="color: aqua;">Assembler</button>
-
+        <button id="asmButton" target="_blank" class="btnAsm">Assembler</button>
         <script type="text/javascript">
             document.getElementById("asmButton").onclick = function() {
                 location.href = "./asm/index.html";
