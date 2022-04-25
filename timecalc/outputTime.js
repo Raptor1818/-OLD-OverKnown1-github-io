@@ -24,7 +24,7 @@ sliderHours.addEventListener("input", (e)=>{
 })
 
 function outputTiempo(){
-    
+    outputHours.innerHTML = ":00";
     if(checkYN.checked){
         temp = startTime - hours;
     }else if(checkYN.checked === false){
