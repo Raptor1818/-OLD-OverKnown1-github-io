@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Time Difference</title>
+    <style>
+        @font-face{font-family: RobotoMono; src: url('../fonts/RobotoMono-Regular.ttf');}
+    </style>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    
+</head>
+
+<body onload="loading()">
+    <div class="title">
+        <h1>Time Difference Calculator</h1>
+        <h3 style="margin-bottom: 100px;">Very simple time difference calculator</h3>
+    </div>
+    <div>
+        <div style="margin-bottom: 55px;">
+            <p>Start time</p>
+            <div class="slidecontainer" style="display: flex; justify-content: center;">
+                <input type="range" min="0" max="23" value="12" class="slider" id="startTime" oninput="outputTiempo()">
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <span id="startValue"></span><span>:00</span>
+            </div>
+            <script src="./slider.js"></script>
+        </div>
+    
+        <div style="margin-bottom: 15px;">
+            <p id="toAddTxt">Hours to add</p>
+            <div class="slidecontainer" style="display: flex; justify-content: center;">
+                <input type="range" min="1" max="24" value="6" class="slider" id="addTime" oninput="outputTiempo()">
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <span style="display: flex; justify-content: center;" id="addValue"></span><span>h</span>
+            </div>
+            <script src="./slider.js"></script>
+        </div>
+       <div style="margin-bottom: 55px; display: flex; justify-content: center;">
+
+            <input type="checkbox" id="subYN" class="subYN" onclick="funziona()" oninput="outputTiempo()">
+            <label style="margin-left: 5px;" class="subLabel">Subtract</label>
+            <script type="text/javascript">
+            function funziona(){
+                const addSubtxt = document.getElementById('toAddTxt');
+                const checkboxe = document.getElementById('subYN');
+                
+                if(checkboxe.checked == true){
+                    addSubtxt.innerHTML = "Hours to subtract";
+                    checkboxe.style.accentColor = "black";
+                }else{
+                    addSubtxt.innerHTML = "Hours to add";
+                }
+            }
+            </script>
+
+        </div>
+
+        <div>
+            <p style="font-size: 30px;">Result</p>
+            <div style="display: flex; justify-content: center;">
+                <span id="output" class="outputHours" onload="set12()"></span><span id="outputHours" class="outputHours">:00</span>
+            </div>
+            <script type="text/javascript" src="./outputTime.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
