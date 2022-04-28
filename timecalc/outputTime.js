@@ -33,10 +33,10 @@ function outputTiempo(){
 
     if(temp>24){
         temp = temp - 24;
-        outputHours.innerHTML = ":00 (+1 day)";
+        outputHours.innerHTML = ":00 (+1d)";
     }else if(temp<0){
         temp = temp + 24;
-        outputHours.innerHTML = ":00 (-1 day)";
+        outputHours.innerHTML = ":00 (-1d)";
     }
     output.innerText = temp;
 }

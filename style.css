@@ -22,6 +22,8 @@ button{
 	font-weight: bold;
 	background-color: #1a1a1a;
 	font-family: RobotoMono;
+	display: block;
+	margin: 0 auto;
 }
 /*.btnSub{
 	color: #ff3300;
