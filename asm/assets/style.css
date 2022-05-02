@@ -1,5 +1,42 @@
 .source-code {
     font-family: RobotoMono;
+    position: relative;
+}
+
+.source-code * {
+    user-select: none;
+}
+
+#canvas {
+    position: absolute;
+}
+
+.canvas-settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings-canvas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-canvas button {
+    margin-right: 5px;
+    background: transparent;
+    border: none;
+    font-weight: 600;
+}
+
+.settings-canvas button:hover {
+    color: red;
+}
+
+.settings-canvas span {
+    margin-left: 5px;
+    font-size: 15px;
 }
 
 .output, .output-bg {
