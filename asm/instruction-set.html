@@ -304,7 +304,7 @@ MOV [D], A  ; Output
 INC D
 MOV [D], B
 </pre>
-<h4>Same as above but 3 digits</h4>
+<h4>Output of a number with 3 digits</h4>
 <pre>
 MOV A, 213 ; Number to output
 MOV B, A ; Copy in register B
@@ -329,6 +329,187 @@ add:
 ADD A, 48 ; From decimal to ASCII
 MOV [D], A ; Output
 INC D  ; Next output cell
+RET
+</pre>
+<h4>Swap numbers with stack (haram)</h4>
+<pre>
+MOV D, 100 ; indirizzo
+MOV C, 0 ; contatore
+MOV B, 1
+MOV [99], 9
+
+
+popolazioneC:
+MOV [D], B
+INC B
+INC C
+INC D
+CMP C, [99]
+JNZ popolazioneC:
+
+MOV D, 100 ; reset indirizzo e contatore
+MOV C, 0
+
+ciclo:
+PUSH [D]
+INC D
+INC C
+CMP C, [99]
+JNZ ciclo:
+
+MOV D, 100 ; reset indirizzo e contatore
+MOV C, 0
+
+popping:
+POP A
+MOV [D], A
+INC D
+INC C
+CMP C, [99]
+JNZ popping:
+HLT
+</pre>
+<h4>Swap numbers without stack (halal)</h4>
+<pre>
+MOV A, 100
+MOV B, 1
+
+CICLO1: 
+MOV [A], B
+INC A
+INC B
+CMP B, 5
+JNE CICLO1:
+
+CICLO2: 
+MOV [A], B
+DEC A
+DEC B
+CMP B, 0
+JNE CICLO2: 
+
+MOV B, 5
+MOV A, 100
+
+CICLO3: 
+MOV [A], B
+INC A
+DEC B
+CMP B, 0
+JNE CICLO3:
+HLT
+</pre>
+<h4>Convert lower case to upper case</h4>
+<pre>
+JMP start: 
+var1: DB "[,.-{ stRIng }" 
+DB 0 
+start: 
+MOV A,var1 
+MOV B,232  
+label: 
+MOV C,[A] 
+CMP C,122 
+JA label2 
+CMP C,97 
+JB label2  
+label3: 
+SUB C,32 
+MOV [B],C 
+INC B 
+INC A 
+CMP D,[A] 
+JNZ label 
+HLT 
+
+label2:
+MOV [B],C 
+INC B 
+INC A 
+CMP D,[A] 
+JNZ label 
+HLT
+</pre>
+<h4>Replace odd numbers with 0</h4>
+<pre>
+MOV A, 100 ; puntatore cella
+ilpopolo:
+MOV [A], B ; mettiamo 1 2 3 4 5 6 7 etc
+INC A
+INC B
+CMP B, 10
+JNZ ilpopolo:
+
+
+MOV C, 100 ;nuovo puntatore cella
+ciclo:
+MOV A, [C] ;mettere il valore della cella 100 in A
+AND A, 1 ;verifica pari o dispari
+JZ next: ;se è pari allora salta
+CALL sostituisci: ;sostituzione
+next:
+INC C ; incremento puntatore cella
+INC D ; incremento contatore 
+CMP D, B ;controlla se il contatore è uguale al vecchio contatore
+JNZ ciclo:
+HLT
+
+
+sostituisci:
+MOV [C], 0
+RET
+</pre>
+<h4>Find the minimum</h4>
+<pre>
+MOV [99], 6
+
+MOV [100], 89
+MOV [101], 32
+MOV [102], 55
+MOV [103], 69
+MOV [104], 22
+MOV [105], 99
+
+MOV C, 100 ; puntatore cella
+
+MOV B, 0 ; contatore ciclo
+
+MOV A, 0 ; contenitore num minore
+
+ciclando:
+CMP B, 0 ; se il ciclo è appena iniziato
+JNZ ciclo:
+MOV A, [C] ; metti il primo numero nel contenitore numero minore
+JMP next:
+
+ciclo:
+MOV D, [C] ; cella temporanea
+
+CMP D, A ; controlla se il numero è minore del numero minore registrato
+JNB next: ; se non lo è, salta
+MOV A, D ; se lo è, rimpiazza il vecchio numero
+
+next:
+INC B
+INC C
+CMP B, [99] ; controlla se il ciclo è finito
+JNZ ciclando:
+CALL stampa:
+HLT
+
+stampa:
+MOV B, A 
+MOV D, 232 
+
+DIV 10  
+MUL 10 
+SUB B, A 
+DIV 10  
+ADD A, 48  
+ADD B, 48
+MOV [D], A  
+INC D
+MOV [D], B
 RET
 </pre>
     </div>
