@@ -41,26 +41,12 @@
             };
         </script>-->
 
-        <button id="osuButton" target="_blank" class="btnOsu" style="margin-bottom: 15px;">osu!</button>
-        <script type="text/javascript">
-            document.getElementById("osuButton").onclick = function () {
-                location.href = "https://osu.ppy.sh/users/15854778";
-            };
-        </script>
+        <button id="osuButton" onclick="window.open('https://osu.ppy.sh/users/15854778', '_blank')" class="btnOsu" style="margin-bottom: 15px;">osu!</button>
 
-        <button id="asmButton" target="_blank" class="btnAsm" style="margin-bottom: 15px;">Assembler</button>
-        <script type="text/javascript">
-            document.getElementById("asmButton").onclick = function() {
-                location.href = "./asm/";
-            };
-        </script>
+        <button id="asmButton" onclick="window.open('./asm/', '_blank')" class="btnAsm" style="margin-bottom: 15px;">Assembler</button>
+        
 
-        <button style="color: white" id="timeButton" target="_blank" class="btnTime">Timezoner</button>
-        <script type="text/javascript">
-            document.getElementById("timeButton").onclick = function() {
-                location.href = "./timecalc/";
-            };
-        </script>
+        <button style="color: white" id="timeButton" onclick="window.open('./timecalc/', '_blank')" class="btnTime">Timezoner</button>
     </div>
     <p style="font-size: 10px; position: absolute; bottom: 5px;">I don't really know what to do with this</p>
 </body>
