@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> 
+<html lang="en"> 
 <head>
     <style>
         @font-face{font-family: RobotoMono; src: url('fonts/RobotoMono-Regular.ttf');}
@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RaptorHub">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     
@@ -15,39 +16,71 @@
 
     <link rel="stylesheet" href="./style.css">
 
-    <title>Lorem</title>
+    <title>RaptorHub</title>
 </head>
 
-<body>
-    <canvas id=c></canvas>
-    <script  src="hexagons/script.js"></script>
+<body style="background-color:#18191f">
 
     <div class="homeTitle" style="margin-bottom: 20px;">
         <h1>Welcome to</h1>
-        
-        <h1 class="RapHub">Raptor's Hub</h1><br>
-
-
-        <div style="text-align: center;" id="app"></div>
-        <script type="text/javascript" src="./script/typer.js"></script> 
     </div>
 
-    <div style="margin-top: 3em;">
-
-        <!--<button id="SubButton" target="_blank "class="btnSub" style="margin-right: 15px;">Subreddit</button>
-        <script type="text/javascript">
-            document.getElementById("SubButton").onclick = function () {
-                location.href = "https://www.reddit.com/r/raptorsecks/";
-            };
-        </script>-->
-
-        <button id="osuButton" onclick="window.open('https://osu.ppy.sh/users/15854778', '_blank')" class="btnOsu" style="margin-bottom: 15px;">osu!</button>
-
-        <button id="asmButton" onclick="window.open('./asm/', '_blank')" class="btnAsm" style="margin-bottom: 15px;">Assembler</button>
-        
-
-        <button style="color: white" id="timeButton" onclick="window.open('./timecalc/', '_blank')" class="btnTime">Timezoner</button>
+    <div style="display: flex;
+	            justify-content: center;
+	            align-items: center;">
+        <ul>
+            <li>
+                <input type="checkbox" />
+                <div class="iltesto">R</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="iltesto">A</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="iltesto">P</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="iltesto">T</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="iltesto">O</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="iltesto">R</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="iltesto">H</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="iltesto">U</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="iltesto">B</div>
+            </li>
+        </ul>
     </div>
-    <p style="font-size: 10px; position: absolute; bottom: 5px;">I don't really know what to do with this</p>
+
+    <div style="text-align: center; width: 100%; margin-top: 40px;" id="app"></div>
+    <script type="text/javascript" src="./script/typer.js"></script> 
+
+    <div style="display: flex; justify-content: center;">
+        <div style="display: flex; justify-content: center; margin-top: 10em; width: 38%;">
+            <!--<button id="SubButton" target="_blank "class="btnSub" style="margin-right: 15px;">Subreddit</button>-->
+
+            <button id="osuButton" onclick="window.open('https://osu.ppy.sh/users/15854778', '_blank')" class="btnOsu">osu!</button>
+
+            <button id="asmButton" onclick="window.open('./subfolders/asm/', '_blank')" class="btnAsm">Assembler</button>
+            
+            <button id="timeButton" onclick="window.open('./subfolders/timecalc/', '_blank')" class="btnTime">Timezoner</button>
+        </div>
+    </div>
 </body>
 </html>

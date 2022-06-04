@@ -1,9 +1,5 @@
-canvas {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index:-1;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
 h2, h1, p, .Typewriter__wrapper, .Typewriter__cursor {
 	color: white;
 	font-family: RobotoMono;
@@ -20,30 +16,32 @@ button{
 	padding: 1em 2.5em;
 	cursor: pointer;
 	font-weight: bold;
-	background-color: #1a1a1a;
+	background-color: #141414;
 	font-family: RobotoMono;
 	display: block;
 	margin: 0 auto;
+	transition: .35s;
 }
 /*.btnSub{
 	color: #ff3300;
 }*/
 .btnTime{
-	color: aliceblue;
+	color: white;
+	margin-left: 20px;
 }
 .btnOsu{
 	color: #ff4b9c;
+	margin-left: 20px;
 }
 .btnAsm{
 	color: #4beaff;
+	margin-left: 20px;
 }
-.btnAsm:hover, .btnOsu:hover, .btnSub:hover{
+button:hover{
 	background-color: #2a2a2a;
 }
-.RapHub{
-	animation: RapHubFade 6s 1;
-	font-size: 50px;
-	font-family: RobotoMono;
+button:active{
+	background-color: rgb(143, 143, 143);
 }
 h1 { 
 	text-align: center;
@@ -57,4 +55,65 @@ h1 {
 	60% { color: blue; }
 	75% { color: #e100ff; }
 	100% { color: white; }
+}
+
+ul {
+	position: relative;
+	display: flex;
+}
+  
+li {
+	list-style: none;
+}
+  
+label {
+	position: relative;
+}
+  
+input[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 80px;
+	width: 80px;
+	z-index: 100;
+}
+
+input[type="checkbox"]:checked ~ div {
+	box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
+	  inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+	color: yellow;
+	text-shadow: 0 0 15px yellow, 0 0 25px yellow;
+	animation: glow 7s linear infinite;
+}
+  
+@keyframes glow {
+	0% {
+	  filter: hue-rotate(0deg);
+	}
+	100% {
+	  filter: hue-rotate(360deg);
+	}
+}
+
+.iltesto{
+	position: relative;
+	height: 80px;
+	width: 80px;
+	background: #18191f;
+	color: #555;
+	display: flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 46px;
+	cursor: pointer;
+	margin: 0 4px;
+	border-radius: 20px;
+	box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05),
+	  4px 4px 6px rgba(0, 0, 0, 0.2),
+	  inset -1px -1px 4px rgba(255, 255, 255, 0.05),
+	  inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+	
+	font-family: 'Poppins', sans-serif;
 }
