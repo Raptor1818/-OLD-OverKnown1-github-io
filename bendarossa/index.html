@@ -4,25 +4,23 @@
     <meta name="description" content="Sito della Benda™"/>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="./css/style.css">
-    <link type="text/javascript" href="script.js">
+    <link type="text/javascript" src="script.js">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benda Rossa</title>
 </head>
 
 <body>
-    <div class="inclinato">
+    <div class="inclinato" style="margin-top: 150px; position: fixed; z-index: -2;">
         <div class="bg-text-container">
             <div class="animate-text">
-            <span>AmbatukaaaHaa Aaa..&nbsp;</span>
-            <span>AmbatukaaaHaa Aaa..&nbsp;</span>
+                <span>Benda Rossa™ Benda Rossa™&nbsp;</span>
+                <span>Benda Rossa™ Benda Rossa™&nbsp;</span>
             </div>
             <div class="animate-text left">
-            <span>AmbatukaaaHaa Aaa..&nbsp;</span>
-            <span>AmbatukaaaHaa Aaa..&nbsp;</span>
+                <span>Benda Rossa™ Benda Rossa™&nbsp;</span>
+                <span>Benda Rossa™ Benda Rossa™&nbsp;</span>
             </div>
         </div>
-        
-        
         
         <div class="container">
             <div class="col">
@@ -32,10 +30,35 @@
             </div>
         </div>
     </div>
-    
-    <div id="divBtns" style="width: 100%; margin-top: 400px; display: flex; justify-content: center;">
-        <button onclick="window.open('./gallery','_blank')">Galleria</button>
+
+    <div class="containerAnimation" >
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="divBtns">
+            <p class="testoBtn">La Galleria dell'OnlyFans</p><br>
+            <button onclick="window.open('./gallery','_blank')">Galleria</button>
+        </div>
     </div>
-    
+    <div class="backgroundColor"></div>
+
+    <script>
+        let sections = document.querySelectorAll(".divBtns");
+        window.onscroll = function fadeIn() {
+            sections.forEach(section => {
+                let sectionSize = section.getBoundingClientRect();
+                let bottomPart = 500;
+                if (window.scrollY >= bottomPart) {
+                    section.style.opacity = "1";
+                    section.style.transform = "translateX(0)";
+                    section.style.transition = "1s ease-in-out";
+                } else {
+                    section.style.opacity = "0";
+                    section.style.transform = "translateX(-20px)";
+                    section.style.transition = "1s ease-in-out";
+                }
+            });
+        }
+    </script>
 </body>
 </html>

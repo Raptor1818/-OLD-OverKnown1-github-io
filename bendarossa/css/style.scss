@@ -4,46 +4,47 @@
 $font-size: 280px;
 $bg-color: #1e2134;
 $text-color: #30442a;
+$base: 0.6rem;
 
 
 body{
   font-family: montserrat;
   overflow-x: hidden;
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   display: flex;
-  align-items: center;
   background: $bg-color;
-  
-  line-height: 1.7;
   color: #fff;
-  
 }
 
 .bg-text-container {
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
   z-index: -999;
 }
 
 
 @keyframes text-scrolling {
-  0% { transform: translate3d(-100%, 0, 0); }
-  100% { transform: translate3d(0%, 0, 0); }
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(110%, 0, 0); }
+}
+
+@keyframes text-scrolling-left {
+  0% { transform: translate3d(68%, 0, 0); }
+  100% { transform: translate3d(-55%, 0, 0); }
 }
 
 .animate-text {
-  animation: text-scrolling 20s linear infinite;
+  animation: text-scrolling 35s linear infinite;
   will-change: transform;
   display: block;
   position: relative;
   white-space: nowrap;
   
   &.left {
-    animation-direction: reverse;
+    animation: text-scrolling-left 35s linear infinite;
   }
-  
 }
 
 span:not(.options) {
@@ -74,18 +75,13 @@ h1 {
   margin: 0;
 }
 p {
-  font-size: 28px;
+  font-size: 21px;
   font-weight: 200;
   margin: 0;
 }
 
 .inclinato{
   transform: skewY(-5deg);
-}
-
-.options{
-  margin-left: 100px;
-  margin-right: 100px;
 }
 
 button{
@@ -95,14 +91,97 @@ button{
   color: white;
   font-family: montserrat;
   font-size: 46px;
-  transition: .2s;
+  transition: .25s;
   z-index: 3;
 }
 button:hover{
   background: rgba(255, 255, 255, 0.118);
-  border-radius: 5px;
+  border-radius: 12px;
   padding: .5em;
 }
 button:active{
   background: rgba(255, 255, 255, 0.5);
+}
+
+.divBtns{
+  width: 100%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  position: relative;
+  top: 43%;
+}
+
+.testoBtn{
+  position: absolute;
+  margin-bottom: 175px;
+  font-size: 30px;
+}
+
+.containerAnimation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+  height: 150vh;
+}
+
+.backgroundColor{
+  width: 100%; height: 100%; position: absolute; top: 75%; background-color: #1e2134; z-index: -1;
+}
+.chevron {
+  position: absolute;
+  width: $base * 3.5;
+  height: $base * 0.8;
+  opacity: 0;
+  transform: scale(0.3);
+  animation: move-chevron 3s ease-out infinite;
+}
+
+.chevron:first-child {
+  animation: move-chevron 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+  animation: move-chevron 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: #ffffff;
+}
+
+.chevron:before {
+  left: 0;
+  transform: skewY(30deg);
+}
+
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skewY(-30deg);
+}
+
+@keyframes move-chevron {
+  25% {
+  opacity: 1;
+  }
+  33.3% {
+  opacity: 1;
+  transform: translateY($base * 3.8);
+  }
+  66.6% {
+  opacity: 1;
+  transform: translateY($base * 5.2);
+  }
+  100% {
+  opacity: 0;
+  transform: translateY($base * 8) scale(0.5);
+  }
 }
