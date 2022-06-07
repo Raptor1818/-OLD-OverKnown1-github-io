@@ -1,6 +1,5 @@
 var app = document.getElementById('app');
 
-
 var typewriter = new Typewriter(app, {
     delay: 95,
 });
@@ -10,7 +9,7 @@ var typewriter = new Typewriter(app, {
     .typeString("Raptor's lil lounge")
     .pauseFor(170)
     .typeString('.')
-    .pauseFor(1650)
+    .pauseFor(2350)
     .deleteChars(1)
     .pauseFor(145)
     .typeString(',')
@@ -18,7 +17,7 @@ var typewriter = new Typewriter(app, {
     .typeString(" also website for self learning coding")
     .pauseFor(170)
     .typeString('.')
-    .pauseFor(7500)
+    .pauseFor(6500)
     .deleteChars(1)
     .pauseFor(145)
     .typeString(" ")

@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap");
+@font-face {
+  font-family: minecraft;
+  src: url('./fonts/minecraft.otf');
+}
 h2, h1, p, .Typewriter__wrapper, .Typewriter__cursor {
   color: white;
   font-family: RobotoMono;
@@ -182,4 +186,26 @@ input[type="checkbox"]:checked ~ div {
   -webkit-box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05), 4px 4px 6px rgba(0, 0, 0, 0.2), inset -1px -1px 4px rgba(255, 255, 255, 0.05), inset 1px 1px 1px rgba(0, 0, 0, 0.1);
           box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05), 4px 4px 6px rgba(0, 0, 0, 0.2), inset -1px -1px 4px rgba(255, 255, 255, 0.05), inset 1px 1px 1px rgba(0, 0, 0, 0.1);
   font-family: 'Poppins', sans-serif;
+}
+
+.suggestion{
+  font-family: minecraft, sans-serif;
+  color: #ffe600;
+  font-size: 18px;
+  position: fixed;
+  margin-top: -85px;
+  margin-left: 35px;
+  animation: bobbing 1.35s infinite;
+}
+
+@keyframes bobbing {
+ 0%{transform: scale(100%) rotate(20deg);}
+ 50%{transform: scale(135%) rotate(20deg);}
+ 100%{transform: scale(100%) rotate(20deg);}
+}
+
+.rapHub{
+  display: flex;
+	justify-content: center;
+	align-items: center;
 }

@@ -27,9 +27,7 @@
         <h1>Welcome to</h1>
     </div>
 
-    <div style="display: flex;
-	            justify-content: center;
-	            align-items: center;">
+    <div class="rapHub">   
         <ul>
             <li>
                 <input type="checkbox" />
@@ -64,11 +62,16 @@
                 <div class="iltesto">U</div>
             </li>
             <li>
-                <input type="checkbox" />
+                <input type="checkbox" id="checkB" onclick="invisString()"/>
                 <div class="iltesto">B</div>
+                    <div class="suggestion">
+                        <span id="stringMC">Click This</span>
+                    </div> 
             </li>
         </ul>
     </div>
+
+    
 
     <div style="text-align: center; width: 100%; margin-top: 120px;" id="app"></div>
     <script type="text/javascript" src="./script/typer.js"></script> 
@@ -85,5 +88,16 @@
         </div>
     </div>
 
+
+    <script>
+        function invisString(){
+            let checkB = document.getElementById('checkB');
+            let stringMC = document.getElementById('stringMC');
+            
+            if(checkB.checked == true){
+                stringMC.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
