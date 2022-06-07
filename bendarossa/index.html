@@ -5,6 +5,7 @@
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="./css/style.css">
     <link type="text/javascript" src="script.js">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benda Rossa</title>
 </head>
@@ -26,39 +27,29 @@
             <div class="col">
                 <h1>Benda</h1>
                 <h1 style="color: red;"> Rossa</h1>
-                <p>Sito (temporaneo) della Benda Rossa™</p>
+                <p>Sito (temporaneo) di Benda Rossa™</p>
             </div>
         </div>
     </div>
 
-    <div class="containerAnimation" >
+    <div class="containerAnimation content-spacer" >
         <div class="chevron"></div>
         <div class="chevron"></div>
         <div class="chevron"></div>
-        <div class="divBtns">
+
+        <div class="divBtns fade-item" data-aos="fade-up">
             <p class="testoBtn">La Galleria dell'OnlyFans</p><br>
             <button onclick="window.open('./gallery','_blank')">Galleria</button>
         </div>
+
     </div>
     <div class="backgroundColor"></div>
 
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        let sections = document.querySelectorAll(".divBtns");
-        window.onscroll = function fadeIn() {
-            sections.forEach(section => {
-                let sectionSize = section.getBoundingClientRect();
-                let bottomPart = 500;
-                if (window.scrollY >= bottomPart) {
-                    section.style.opacity = "1";
-                    section.style.transform = "translateX(0)";
-                    section.style.transition = "1s ease-in-out";
-                } else {
-                    section.style.opacity = "0";
-                    section.style.transform = "translateX(-20px)";
-                    section.style.transition = "1s ease-in-out";
-                }
-            });
-        }
+        AOS.init();
     </script>
 </body>
 </html>

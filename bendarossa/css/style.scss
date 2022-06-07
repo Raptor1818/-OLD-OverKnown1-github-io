@@ -4,7 +4,7 @@
 $font-size: 280px;
 $bg-color: #1e2134;
 $text-color: #30442a;
-$base: 0.6rem;
+$base: 0.8rem;
 
 
 body{
@@ -91,13 +91,13 @@ button{
   color: white;
   font-family: montserrat;
   font-size: 46px;
-  transition: .25s;
+  transition: .125s;
   z-index: 3;
 }
 button:hover{
   background: rgba(255, 255, 255, 0.118);
   border-radius: 12px;
-  padding: .5em;
+  padding: .4em;
 }
 button:active{
   background: rgba(255, 255, 255, 0.5);
@@ -185,3 +185,4 @@ button:active{
   transform: translateY($base * 8) scale(0.5);
   }
 }
+
